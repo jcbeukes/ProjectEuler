@@ -1,0 +1,17 @@
+function fiboEvenSum(n) {
+  var fib_prev = 1
+  var fib = 2
+  var temp
+  var sum = 0
+  for (var i=1; i<n; i++) {
+    if (fib % 2 == 0) {
+      sum += fib
+    }
+    temp = fib
+    fib = fib_prev + fib
+    fib_prev = temp
+  }
+  return sum
+}
+
+fiboEvenSum(10);
