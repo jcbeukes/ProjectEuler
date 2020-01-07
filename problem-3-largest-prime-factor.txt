@@ -1,0 +1,17 @@
+function largestPrimeFactor(number) {
+  
+  var i = 2
+  var largest = number
+  
+  while (i < largest) {
+    if (largest % i == 0) {
+      largest = largest / i
+      i = 1
+    }
+    i ++
+  }
+
+  return largest
+}
+
+largestPrimeFactor(13195);
