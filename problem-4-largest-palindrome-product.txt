@@ -1,0 +1,25 @@
+function largestPalindromeProduct(n) {
+
+  var max = Math.pow(10, n) - 1
+  let min = Math.pow(10, n-1)
+  var maxProduct = 0
+  for (var i = max; i >= min; i --) {
+    for (var j = i; j >= min; j --) {
+      var product = i*j
+      if (isPalindrome(product)) {
+        if (product > maxProduct) {
+          maxProduct = product
+        }
+        break
+      }
+    }
+  }
+  return maxProduct
+}
+
+function isPalindrome(number) {
+  let word = number.toString()
+  return (word == word.split("").reverse().join("")) 
+}
+
+largestPalindromeProduct(3);
