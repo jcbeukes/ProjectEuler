@@ -1,0 +1,25 @@
+function nthPrime(n) {
+  var prime = 2
+  var i = 2
+  var count = 3
+  while(i <= n) {
+    if (isPrime(count)) {
+      prime = count
+      i ++
+    }
+    count ++
+  }
+  return prime
+}
+
+function isPrime(n) {
+  let max = Math.sqrt(n)
+  for (var i = 2; i <= max; i ++) {
+    if (n%i == 0) {
+      return false
+    }
+  }
+  return true
+}
+
+nthPrime(10001);
